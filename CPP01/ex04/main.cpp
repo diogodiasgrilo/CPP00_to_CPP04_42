@@ -6,11 +6,27 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 12:48:32 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/24 15:04:23 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:37:09 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "main.hpp"
+
+std::string searchReplace(std::string original, const char *s, const char *r) {
+    std::string search(s);
+    std::string replace(r);
+    size_t      pos;
+
+    if (search.empty())
+        return original;
+    pos = original.find(search);
+    while (pos + 1) {
+        original.erase(pos, search.length());
+        original.insert(pos, replace);
+        pos = original.find(search, pos + replace.length());
+    }
+    return original;
+}
 
 int main(int argc, char *argv[])
 {
@@ -38,7 +54,7 @@ int main(int argc, char *argv[])
         while (std::getline(inFile, line))
         {
             while (line.find(s1) != std::string::npos)
-                line.replace(line.find(s1), s1.length(), argv[3]);
+                line = searchReplace(line, argv[2], argv[3]); 
             outFile << line << std::endl;
         }
         inFile.close();
