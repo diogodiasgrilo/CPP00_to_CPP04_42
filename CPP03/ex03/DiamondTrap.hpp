@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:47:44 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/27 16:13:34 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:21:59 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ virtual public ScavTrap
         DiamondTrap(DiamondTrap &src);
         DiamondTrap &operator=(DiamondTrap const &src);
         ~DiamondTrap();
-        void attack(const std::string& target);
+        virtual void attack(const std::string &);
         void whoAmI();
 };
 
