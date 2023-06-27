@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:58:05 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/25 17:54:48 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:00:34 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Fixed
         Fixed(const int);
         Fixed(const float);
         Fixed(const Fixed &fixed);
-        ~Fixed(void);
         Fixed   &operator=(const Fixed &fixed);
+        ~Fixed(void);
         float   toFloat( void ) const;
         int     toInt( void ) const;
         int     getRawBits(void) const;

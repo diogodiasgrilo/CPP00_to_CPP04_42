@@ -1,7 +1,7 @@
-NAME = fixed1
+NAME = diamondtrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

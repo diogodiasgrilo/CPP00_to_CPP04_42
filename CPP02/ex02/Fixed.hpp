@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:58:05 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/25 18:34:17 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:24:39 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Fixed
         Fixed(const int);
         Fixed(const float);
         Fixed(const Fixed &fixed);
-        ~Fixed(void);
         Fixed &operator=(const Fixed &fixed);
+        ~Fixed(void);
         bool operator>(const Fixed &fixed) const;
         bool operator<(const Fixed &fixed) const;
         bool operator>=(const Fixed &fixed) const;

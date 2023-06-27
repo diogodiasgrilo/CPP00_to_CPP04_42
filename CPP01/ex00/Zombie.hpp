@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 18:40:10 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/23 22:09:25 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/26 14:37:09 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ class Zombie
         Zombie(std::string name);
         ~Zombie(void);
         void	announce(void);
-        void    setName(std::string newName);
 };
 #endif

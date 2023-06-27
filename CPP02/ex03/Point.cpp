@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 22:01:22 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/25 22:31:23 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:53:14 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Point::Point()
 
 Point::~Point(void) 
 {
-    return ;
 }
 
 Point::Point(const float x, const float y)

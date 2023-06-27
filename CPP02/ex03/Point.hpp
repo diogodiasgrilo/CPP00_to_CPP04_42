@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 22:01:09 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/25 22:29:38 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:52:29 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Point
         Fixed const y;
     public:
         Point(void);
-        ~Point(void);
         Point(const float x, const float y);
         Point(const Point &point);
         Point &operator=(const Point &point);
+        ~Point(void);
         Fixed getX(void) const;
         Fixed getY(void) const;
 };

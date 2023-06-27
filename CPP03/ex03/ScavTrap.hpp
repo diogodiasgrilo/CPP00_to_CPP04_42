@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 18:40:10 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/26 14:40:07 by diogpere         ###   ########.fr       */
+/*   Created: 2023/06/27 11:35:55 by diogpere          #+#    #+#             */
+/*   Updated: 2023/06/27 15:28:14 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+# ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
-# include <string>
+#include <string>
+#include "ClapTrap.hpp"
 
-class Zombie
+class ScavTrap : virtual public ClapTrap
 {
-    private:
-        std::string	name;
     public:
-        Zombie();
-        ~Zombie();
-        void	announce(void);
-        void    insertName(std::string newName);
+        ScavTrap();
+        ScavTrap(const std::string &name);
+        ScavTrap(ScavTrap &src);
+        ScavTrap &operator=(ScavTrap const &src);
+        ~ScavTrap();
+        void attack(const std::string& target);
+        void guardGate();
 };
+
 #endif

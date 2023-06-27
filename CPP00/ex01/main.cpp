@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 14:43:22 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/26 11:37:07 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:58:05 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 std::string TrimString(std::string str)
 {
-    while (std::isspace(*str.begin()))
+    while (std::isspace(str.front()))
         str.erase(0, 1);
-    while (std::isspace(*str.end()))
-        str.erase(str.size() - 1, 1);
+    while (std::isspace(str.back()))
+        str.pop_back();
     return str;
 }
 
-int ConvertToInt(std::string str) {
-    int final = 0;
-    int i = 0;
-
-    while (std::isdigit(*(str.begin() + i)) && str[i]) {
-        final += final * 10 + str[i] - '0';
-        i++;
-    }
-    return final;
+int ConvertToInt(std::string str)
+{
+    str.erase(0, str.find_first_not_of('0'));
+    if (str.empty())
+        return (0);
+    return (std::atoi(str.c_str()));
 }
 
 std::string GetLine(std::string prompt) {

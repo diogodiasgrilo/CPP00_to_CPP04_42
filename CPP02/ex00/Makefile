@@ -1,15 +1,20 @@
-NAME = fixe1
+NAME = fixed0
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 SRC = main.cpp Fixed.cpp
-OBJ =  $(SRC:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME):
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
-fclean:
-	rm $(NAME)
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
