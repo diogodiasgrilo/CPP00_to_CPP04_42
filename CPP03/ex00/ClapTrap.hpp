@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 22:19:35 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/27 15:58:17 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:21:41 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     int  getAttackDamage() const;
-    int getHitPoints() const;
-    int getEnergyPoints() const;
+    int  getHitPoints() const;
+    int  getEnergyPoints() const;
     void setHitPoints(int hitPoints);
     const std::string &getName() const;
     void setName(const std::string &name);
