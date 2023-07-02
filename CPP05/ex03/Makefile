@@ -1,7 +1,7 @@
-NAME = bureaucrat_&_forms
+NAME = the_interns
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
-SRC = Bureaucrat.cpp Form.cpp main.cpp
+SRC = Bureaucrat.cpp AForm.cpp main.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

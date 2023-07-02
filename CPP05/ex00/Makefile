@@ -1,7 +1,7 @@
-NAME = animals
+NAME = bureaucrat
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
-SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = Bureaucrat.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

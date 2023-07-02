@@ -6,43 +6,46 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:35:47 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/28 20:49:30 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/01 13:55:27 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-    const WrongAnimal* wrong = new WrongAnimal();
-    const WrongCat* c = new WrongCat();
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    std::cout << std::endl;
-
-    std::cout << wrong->getType() << " " << std::endl;
-    std::cout << c->getType() << " " << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl << std::endl;
-    wrong->makeSound();
-    c->makeSound();
-    meta->makeSound();
-    j->makeSound();
-    i->makeSound(); //will output the cat sound!
-   
-    std::cout << std::endl;
-    
-    delete wrong;
-    delete c;
-    delete meta;
-    delete j;
-    delete i;
-    return 0;
+    Bureaucrat *bureaucrat = new Bureaucrat("Diogo", 1);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 150);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 0);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 151);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 2);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 149);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 3);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 148);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 4);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 147);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    bureaucrat = new Bureaucrat("Diogo", 5);
+    std::cout << *bureaucrat << std::endl;
+    delete bureaucrat;
+    return (0);
 }

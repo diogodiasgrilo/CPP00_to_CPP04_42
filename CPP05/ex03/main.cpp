@@ -6,25 +6,34 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:35:47 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/01 19:24:47 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/02 00:56:46 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int main()
+int main(void)
 {
-    Bureaucrat *bureaucrat = new Bureaucrat("Diogo", 10);
-    Form *form = new Form("first", 1, 1);
+	srand(time(NULL));
+	Intern someRandomIntern;
+	AForm *rrf;
+	AForm *scf;
+	AForm *ppf;
+	AForm *unknown;
 
-    std::cout << std::endl<< *bureaucrat << std::endl;
-    std::cout << *form << std::endl;
+	rrf = someRandomIntern.makeForm("robotomy request", "Wall-e");
+	scf = someRandomIntern.makeForm("shrubbery creation", "Home");
+	ppf = someRandomIntern.makeForm("presidential pardon", "Clinton");
+	unknown = someRandomIntern.makeForm("unknown", "unknown");
 
-    bureaucrat->signForm(*form);
-    std::cout << std::endl;
-    std::cout << *form << std::endl;
-    delete bureaucrat;
-    delete form;
-    return (0);
+	delete rrf;
+	delete scf;
+	delete ppf;
+	delete unknown;
+	return (0);
 }
