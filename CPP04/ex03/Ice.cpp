@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:50:40 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 23:41:58 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:04:50 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ Ice::~Ice(void) {}
 
 Ice &Ice::operator=(Ice const &src)
 {
-    this->_type = src._type;
-    this->_equiped = src._equiped;
+	if (this != &src)
+	{
+		this->_type = src._type;
+		this->_equiped = src._equiped;
+	}
     return (*this);
 }
 

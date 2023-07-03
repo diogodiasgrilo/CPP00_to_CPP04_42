@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:35:47 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 16:12:41 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:39:43 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,21 @@ int main()
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
-    ICharacter* me = new Character("me");
+    ICharacter* me = new Character("");
     AMateria* tmp;
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
+	// tmp = src->createMateria("ice");
+	// me->equip(tmp);
+	// tmp = src->createMateria("cure");
+	// me->unequip(0);
+	// me->unequip(1);
+	// me->unequip(0);
+	// me->unequip(0);
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
@@ -53,15 +62,10 @@ int main()
     me->equip(tmp);
 
     std::cout << std::endl << "More tests 4:" << std::endl;
-    std::cout << "first" << std::endl;
     me->use(0, *bob);
-    std::cout << "second" << std::endl;
     me->unequip(0);
-    std::cout << "third" << std::endl;
     me->use(0, *bob);
-    std::cout << "fourth" << std::endl;
     me->unequip(0);
-    std::cout << "end" << std::endl;
     delete bob;
     delete me;
     delete src;

@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:54:35 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 23:38:23 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:06:11 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ AMateria::~AMateria(void)
 
 AMateria &AMateria::operator=(AMateria const &src)
 {
-    this->_type = src._type;
-    this->_equiped = src._equiped;
+	if (this != &src)
+	{
+		this->_type = src._type;
+    	this->_equiped = src._equiped;
+	}
     return (*this);
 }
 

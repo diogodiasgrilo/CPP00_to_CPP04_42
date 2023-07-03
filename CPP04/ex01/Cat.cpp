@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:27:41 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/28 23:09:23 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:47:49 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,30 @@ Cat::Cat()
 {
     std::cout << "Cat created" << std::endl;
     this->_type = "Cat";
+	this->_brain = new Brain();
 }
 
 Cat::Cat(Cat &src)
 : Animal(src)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = src;
+	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &src)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Cat assignation operator called" << std::endl;
     if (this != &src)
-        this->_type = src._type;
+	{
+		this->_type = src._type;
+		this->_brain = new Brain(*src._brain);
+	}
     return (*this);
 }
 
 Cat::~Cat()
 {
+	delete this->_brain;
     std::cout << "Cat destroyed" << std::endl;
 }
 

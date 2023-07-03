@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:35:47 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/28 23:17:51 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:52:50 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int main()
 {
     int number = 10;
-    // const AAnimal* meta = new AAnimal();
+    // AAnimal test;
     const AAnimal *animals[number];
     
     for (int i = 0; i < number; i++)

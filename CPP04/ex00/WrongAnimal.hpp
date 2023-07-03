@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:38:42 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 23:20:55 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 11:54:44 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
         WrongAnimal &operator=(WrongAnimal const &src);
         virtual ~WrongAnimal();
         std::string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 #endif

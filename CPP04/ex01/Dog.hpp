@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:28:05 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/28 23:02:43 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 12:33:24 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 class Dog : public Animal
 {
+	private:
+		Brain	*_brain;
     public:
         Dog();
         Dog(const Dog &src);

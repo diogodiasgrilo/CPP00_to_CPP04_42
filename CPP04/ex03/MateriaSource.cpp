@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 13:17:30 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 13:21:42 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:06:48 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ MateriaSource::~MateriaSource()
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &src)
 {
-    this->_count = src._count;
-    for (int i = 0; i < 4; i++)
-        this->_materia[i] = src._materia[i];
+	if (this != &src)
+	{
+		this->_count = src._count;
+		for (int i = 0; i < 4; i++)
+			this->_materia[i] = src._materia[i];
+	}
     return (*this);
 }
 

@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dropped.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 20:25:55 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/30 17:29:30 by diogpere         ###   ########.fr       */
+/*   Created: 2023/06/30 18:20:10 by diogpere          #+#    #+#             */
+/*   Updated: 2023/06/30 19:45:32 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DROPPED_H
+#define DROPPED_H
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Animal
+struct Node
 {
-    protected:
-        std::string _type;
-    public:
-        Animal();
-        Animal(const Animal &src);
-        Animal &operator=(Animal const &src);
-        virtual ~Animal();
-        std::string getType() const;
-        virtual void makeSound() const;
-        void setType(const std::string &type);
+	Node(AMateria *materia);
+	AMateria *item;
+	struct Node *next;
+};
+
+class LinkedList 
+{
+	private:
+		Node* head;
+
+	public:
+		LinkedList();
+		LinkedList(const LinkedList &src);
+        LinkedList &operator=(LinkedList const &src);
+        ~LinkedList();
+		void addFront(AMateria *materia);
+		Node* cloneList(Node* head);
+		void clear();
 };
 
 #endif

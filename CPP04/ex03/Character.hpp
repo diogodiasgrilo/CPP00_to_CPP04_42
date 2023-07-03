@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 13:03:56 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/29 15:11:46 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:50:23 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
+#include "Dropped.hpp"
 
 class Character : public ICharacter
 {
     private:
         std::string name;
         AMateria *inventory[4];
+		LinkedList *dropped;
         int used;
     public:
         Character();

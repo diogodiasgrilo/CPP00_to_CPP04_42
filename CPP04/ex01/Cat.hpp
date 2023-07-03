@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 20:27:13 by diogpere          #+#    #+#             */
-/*   Updated: 2023/06/28 20:27:34 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/06/30 12:32:04 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+	private:
+		Brain	*_brain;
     public:
         Cat();
         Cat(Cat &src);
