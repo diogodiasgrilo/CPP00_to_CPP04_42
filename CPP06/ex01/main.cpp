@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:09:40 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 17:14:43 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:16:35 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main(void)
     data->s2 = "World";
     returned = serializer.deserialize(serializer.serialize(data));
     std::cout << "returned was: " << returned->s1 << " " << returned->n << " " << returned->s2 << std::endl;
+	delete (returned);
     return (0);
 }

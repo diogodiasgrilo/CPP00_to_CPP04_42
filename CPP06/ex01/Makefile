@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = serializer
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 SRC = Serializer.cpp main.cpp

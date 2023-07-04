@@ -1,7 +1,7 @@
-NAME = bureaucrat
+NAME = abcs
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
-SRC = Base.cpp main.cpp utils.cpp C.cpp B.cpp A.cpp
+SRC = main.cpp utils.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

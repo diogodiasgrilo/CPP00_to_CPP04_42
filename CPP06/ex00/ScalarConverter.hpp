@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 11:54:52 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 16:12:58 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:56:27 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <iomanip>
 #include <cmath>
+#include <cstdlib>
+#include <climits>
 
 #define CHAR 1
 #define FLOAT 2
@@ -47,7 +49,7 @@ class ScalarConverter
         void    getFArg() const;
         void    getCArg() const;
         void    getDArg() const;
-        void    print_data();
+        void    print_data(std::string str);
         void    setType(int type);
         int     getType(void); 
 };

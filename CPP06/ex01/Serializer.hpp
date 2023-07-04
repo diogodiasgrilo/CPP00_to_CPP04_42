@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:04:40 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 17:10:19 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:43:00 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string>
 # include <ctime>
 # include "Data.hpp"
+
+typedef unsigned int * uintptr_t;
 
 class Serializer
 {

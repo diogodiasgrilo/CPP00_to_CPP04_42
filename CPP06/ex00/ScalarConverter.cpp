@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 11:54:54 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 16:23:41 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:40:43 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,12 @@ void    ScalarConverter::detect_type(std::string str)
             has_letter = 1;
         i++;
     }
-    if (i == 1)
-    {
-        this->setType(CHAR);
-        this->_char = atoi(this->_input.c_str());
-    }
-    else if (has_num == 1 && has_dot == 1 && has_f == 1) 
+    if (has_num == 1 && has_dot == 1 && has_f == 1 && has_letter == 0) 
     {
         this->setType(FLOAT);
         this->_float = atof(this->_input.c_str());
     }
-    else if (has_num == 1 && has_dot == 1 && has_f == 0)
+    else if (has_num == 1 && has_dot == 1 && has_f == 0 && has_letter == 0)
     {
         this->setType(DOUBLE);
         this->_double = atof(this->_input.c_str());
@@ -94,12 +89,17 @@ void    ScalarConverter::detect_type(std::string str)
     else if (has_num == 1 && has_dot == 0 && has_f == 0 && has_letter == 0)
     {
         this->setType(INT);
-        if (std::stol(this->_input) >= INT_MIN && std::stol(this->_input) <= INT_MAX) {
-			this->_int = std::stoi(this->_input);
+        if (std::atol(this->_input.c_str()) >= INT_MIN && std::atol(this->_input.c_str()) <= INT_MAX) {
+			this->_int = std::atoi(this->_input.c_str());
 			this->_char = this->_int;
 		}
 		else
 			this->_isWrong = true;
+    }
+	else if (i == 1)
+    {
+        this->setType(CHAR);
+        this->_char = static_cast<char>(*(this->_input.c_str()));
     }
     else 
         this->setType(INVALID);
@@ -133,7 +133,7 @@ void ScalarConverter::convert(const std::string &str)
 		default:
 			break;
 	}
-    this->print_data();
+    this->print_data(str);
 }
 
 void ScalarConverter::getIArg() const 
@@ -143,7 +143,7 @@ void ScalarConverter::getIArg() const
 		std::cout << "impossible" << std::endl;
 	else if (this->_isWrong == true)
 		std::cout << "overflow" << std::endl;
-	else if (std::stol(this->_input) < INT_MIN || std::stol(this->_input) > INT_MAX)
+	else if (std::atol(this->_input.c_str()) < INT_MIN || std::atol(this->_input.c_str()) > INT_MAX)
 		std::cout << "overflow" << std::endl;
 	else
 		std::cout << this->_int << std::endl;
@@ -160,7 +160,7 @@ void ScalarConverter::getFArg() const
 	}
 	else if (this->_type == INVALID)
 		std::cout << "impossible" << std::endl;
-	else if (std::stol(this->_input) >= INT_MIN && std::stol(this->_input) <= INT_MAX)
+	else if (std::atol(this->_input.c_str()) >= INT_MIN && std::atol(this->_input.c_str()) <= INT_MAX)
 	{
 		std::cout << std::fixed << std::setprecision(1) << this->_float << "f" << std::endl;
 	}
@@ -172,7 +172,7 @@ void ScalarConverter::getFArg() const
 void ScalarConverter::getCArg() const 
 {
 	std::cout << "char: ";
-	if (_type == PSEUDOLIT)
+	if (_type == PSEUDOLIT || _type == INVALID)
 		std::cout << "impossible" << std::endl;
 	else if (_char >= 32 && _char <= 126)
 		std::cout << "'" << _char << "'" << std::endl;
@@ -188,7 +188,7 @@ void ScalarConverter::getDArg() const
 	}
 	else if (this->_type == INVALID)
 		std::cout << "impossible" << std::endl;
-	else if (std::stol(this->_input) >= INT_MIN && std::stol(this->_input) <= INT_MAX)
+	else if (std::atol(this->_input.c_str()) >= INT_MIN && std::atol(this->_input.c_str()) <= INT_MAX)
 	{
 		std::cout << std::fixed << std::setprecision(1) << this->_double << std::endl;
 	}
@@ -196,12 +196,31 @@ void ScalarConverter::getDArg() const
 		std::cout << this->_input << std::endl;
 }
 
-void ScalarConverter::print_data() 
+int	f_period_float(std::string str)
 {
-	getCArg();
-	getIArg();
-	getFArg();
-	getDArg();
+	int l = str.length();
+	
+	if (l >= 2 && str[l - 1] == 'f' && str[l - 2] == '.')
+		return (1);
+	return (0);
+}
+
+void ScalarConverter::print_data(std::string str) 
+{
+	if (str[0] != '.' && str[str.length() - 1] != '.' && !f_period_float(str))
+	{
+ 		getCArg();
+		getIArg();
+		getFArg();
+		getDArg();
+	}
+	else
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+	}	
 }
 
 int     ScalarConverter::getType(void)

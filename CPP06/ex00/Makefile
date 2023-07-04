@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = scalar_converter
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 SRC = ScalarConverter.cpp main.cpp

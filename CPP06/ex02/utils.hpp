@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:59:44 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 18:12:47 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:53:18 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <string>
 # include <ctime>
-# include "Base.hpp"
+# include <cstdlib>
 # include "A.hpp"
 # include "B.hpp"
 # include "C.hpp"

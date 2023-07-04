@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:59:30 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 18:21:32 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:41:43 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,44 @@ Base *generate(void)
     int random = rand() % 3;
 
     if (random == 0)
-        return (new A);
+        return (new A());
     else if (random == 1)
-        return (new B);
+        return (new B());
     else
-        return (new C);
+        return (new C());
 }
 
 void identify(Base* p)
 {
-    if (dynamic_cast<A*>(p))
+    if (dynamic_cast<A*>(p) != NULL)
         std::cout << "A" << std::endl;
-    else if (dynamic_cast<B*>(p))
+    else if (dynamic_cast<B*>(p) != NULL)
         std::cout << "B" << std::endl;
-    else if (dynamic_cast<C*>(p))
+    else if (dynamic_cast<C*>(p) != NULL)
         std::cout << "C" << std::endl;
 }
 
 void identify(Base& p)
 {
-    if (dynamic_cast<A*>(&p))
+    try
+    {
+        (void)dynamic_cast<A&>(p);
         std::cout << "A" << std::endl;
-    else if (dynamic_cast<B*>(&p))
+        return;
+    }
+    catch (std::exception&) {std::cout << "Exception caught: cast failed on A\n";};
+    try
+    {
+        (void)dynamic_cast<B&>(p);
         std::cout << "B" << std::endl;
-    else if (dynamic_cast<C*>(&p))
+        return;
+    }
+    catch (std::exception&) {std::cout << "Exception caught: cast failed on B\n";};
+    try
+    {
+        (void)dynamic_cast<C&>(p);
         std::cout << "C" << std::endl;
+        return;
+    }
+    catch (std::exception&) {std::cout << "Exception caught: cast failed on C\n";};
 }

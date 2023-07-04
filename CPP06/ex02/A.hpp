@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:38:48 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/02 18:17:24 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/04 13:46:00 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 # include "Base.hpp"
 
-class A : public Base
-{
-    public:
-        A();
-        virtual ~A();
-};
+class A : public Base {};
 
 #endif
