@@ -1,4 +1,4 @@
-NAME = whatever
+NAME = array
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 SRC = main.cpp

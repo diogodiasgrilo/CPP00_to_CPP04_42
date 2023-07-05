@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = iter
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -Wshadow -std=c++98
 SRC = main.cpp
