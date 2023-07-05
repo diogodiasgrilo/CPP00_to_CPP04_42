@@ -14,7 +14,6 @@
 
 int main()
 {
-    //make tests
     Array<int> a(5);
     Array<int> b(5);
     Array<int> c(5);
