@@ -6,7 +6,7 @@
 /*   By: diogpere <diogpere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:47:12 by diogpere          #+#    #+#             */
-/*   Updated: 2023/07/04 15:00:02 by diogpere         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:39:41 by diogpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ class Array
         Array &operator=(Array const &other);
         T &operator[](unsigned int index) const;
         unsigned int size(void) const;
+
+		class OutOfRange : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("index is out of range");
+				}
+		};
 };
 
 template <typename T>
@@ -79,9 +88,16 @@ Array<T> &Array<T>::operator=(Array const &other)
 template <typename T>
 T &Array<T>::operator[](unsigned int index) const
 {
-    if (index >= this->_size)
-        throw std::exception();
-    return (this->_array[index]);
+	try
+	{
+		if (index >= this->_size || index < 0)
+			throw OutOfRange();
+		else
+			return (this->_array[index]);
+	}
+    catch (OutOfRange &e) {std::cout << e.what() << std::endl;}
+	std::cout << "returning instead the first member of the array: ";
+	return (this->_array[0]);
 }
 
 template <typename T>
